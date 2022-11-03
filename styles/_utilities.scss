@@ -1,0 +1,19 @@
+$primary: #011827;
+$secondary: #ffffff;
+$medium: #B6BDB5;
+$accent1: #E3170A;
+$accent2: #36769D;
+$accent3: #8ACFE5;
+$boxShadow: rgba(0, 0, 0, 0.25);
+
+@mixin flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}

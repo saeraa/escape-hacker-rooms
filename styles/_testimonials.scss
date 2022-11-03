@@ -1,0 +1,57 @@
+.testimonials {
+  padding: 1rem;
+  margin: 0 auto;
+  max-width: 55ch;
+
+  img {
+    width: 73px;
+    height: 72px;
+  }
+
+  article {
+    gap: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  blockquote {
+    font-size: 24px;
+    font-style: italic;
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  article:nth-of-type(2) {
+    display: none;
+  }
+}
+
+
+@media screen and (min-width: 950px) {
+  .testimonials {
+    @include flex;
+
+    max-width: 1280px;
+    padding: 3rem;
+    gap: 1em;
+
+    img {
+      width: 96px;
+      height: 96px;
+    }
+
+    article {
+      max-width: 55ch;
+    }
+
+    article:nth-of-type(2) {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+    }
+  }
+}

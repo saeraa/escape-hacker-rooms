@@ -1,0 +1,74 @@
+@import "./utilities";
+
+%btn {
+  width: 308px;
+  max-width: 90vw;
+  height: 66px;
+  font-size: 24px;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  margin: 1rem auto;
+  font-family: inherit;
+  position: relative;
+  text-decoration: none;
+
+  -webkit-transition: -webkit-transform 0.4s ease-in-out;
+  transition: -webkit-transform 0.4s ease-in-out;
+  -o-transition: transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+
+  &:hover {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+}
+
+.btn-primary {
+  @include flex;
+  @extend %btn;
+  background-color: $accent1;
+  border: 2px solid $accent1;
+  color: $secondary;
+}
+
+.btn-secondary {
+  @include flex;
+  @extend %btn;
+  background-color: $accent3;
+  border: 2px solid $accent3;
+  color: $primary;
+}
+
+.btn-outline {
+  @include flex;
+  @extend %btn;
+  background-color: transparent;
+  border: 2px solid $accent3;
+  color: $accent3;
+  -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.btn-small {
+  width: 180px;
+  height: 44px;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 1279px) {
+  .btn-nobtn {
+    padding: 1rem;
+    width: auto;
+    height: auto;
+    font-size: 16px;
+    color: $accent2;
+    text-decoration: underline;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 2.5rem;
+  }
+}
