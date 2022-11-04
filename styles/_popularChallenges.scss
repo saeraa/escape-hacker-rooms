@@ -2,7 +2,7 @@
 
   .challenges-header {
     font-weight: 400;
-    font-size: 32px;
+    font-size: clamp(32px, 3vw, 36px);
     padding: 6.5rem 2rem .5rem 1.4rem;
   }
 
@@ -20,7 +20,7 @@
     -ms-flex-negative: 1 0 auto;
     -ms-flex: 1 0 auto;
     flex: 1 0 auto;
-    // -ms-overflow-style: none;
+    -ms-overflow-style: none;
     scrollbar-width: none;
 
     &::-webkit-scrollbar {
@@ -58,6 +58,7 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    gap: 1em;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -66,15 +67,16 @@
     padding-inline: 1rem;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
-    justify-content: space-between;
+
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
 
     .rating {
       %star {
         display: inline-block;
         height: 26px;
         width: 23px;
-        margin: 0;
-        background-size: 16px;
       }
 
       & .star-filled {
@@ -140,6 +142,12 @@
     .btn-primary {
       grid-area: button1;
       justify-self: end;
+    }
+
+    .info {
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
     }
   }
 }
