@@ -138,7 +138,7 @@
   margin: 0;
   padding: 0;
   background-color: transparent;
-  background-image: url(../images/open.svg);
+  background-image: url(images/open.svg);
   background-repeat: no-repeat;
   background-size: 100%;
   margin-left: auto;
@@ -176,7 +176,7 @@ nav {
     width: 40px;
     height: 40px;
     background-color: transparent;
-    background-image: url(../images/close.svg);
+    background-image: url(images/close.svg);
     background-repeat: no-repeat;
     border: none;
     background-size: 100%;
