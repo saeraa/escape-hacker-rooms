@@ -35,39 +35,145 @@
     margin: 0;
     padding: 0;
 
+    background-color: transparent;
+    background-image: url(../images/open.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
     margin-left: auto;
     cursor: pointer;
     display: block;
     width: 51px;
-    height: 6px;
-    background-color: $secondary;
+    height: 51px;
     border: none;
-    border-radius: 3px;
     position: relative;
 
-    &::after,
-    &::before {
-      content: "";
-      background-color: $secondary;
-      height: 6px;
-      border-radius: 3px;
-      width: 51px;
-      position: absolute;
-      top: 14px;
-      right: 0px;
-      display: block;
-      z-index: +1;
-    }
-
-    &::before {
-      top: 28px;
-    }
   }
 }
 
 /* Hide menu on smaller screens */
 nav {
   display: none;
+}
+
+@media (max-width: 950px) {
+
+  nav {
+    -webkit-animation: ul-appear .2s linear;
+    animation: ul-appear .2s linear;
+    background-color: rgba(255, 255, 255, 0.5);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    place-content: center;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+
+    button.btn-menu-close {
+      z-index: 100;
+      position: fixed;
+      right: 2.5rem;
+      top: 2.5rem;
+      width: 40px;
+      height: 40px;
+      background-color: transparent;
+      background-image: url(../images/close.svg);
+      background-repeat: no-repeat;
+      border: none;
+      background-size: 100%;
+      cursor: pointer;
+      -webkit-animation: ul-appear 0.2s linear backwards;
+      animation: ul-appear 0.2s linear backwards;
+      -webkit-animation-delay: .3s;
+      animation-delay: .3s;
+
+    }
+
+
+    @-webkit-keyframes ul-appear {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+
+    @keyframes ul-appear {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes ul-grow {
+      from {
+        -webkit-transform: scale(0.95);
+        transform: scale(0.95);
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+      }
+    }
+
+    @keyframes ul-grow {
+      from {
+        -webkit-transform: scale(0.95);
+        transform: scale(0.95);
+      }
+
+      to {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+      }
+    }
+
+    ul {
+      -webkit-animation: ul-appear 0.2s linear backwards;
+      animation: ul-appear 0.2s linear backwards, ul-grow 0.2s backwards;
+      -webkit-animation-delay: 0.2s;
+      animation-delay: .2s;
+      display: block;
+      position: relative;
+      width: clamp(90vw, 95vw, calc(100vw - 2rem));
+      height: clamp(90vh, 95vh, calc(100vh - 2rem));
+      margin: 2rem;
+      z-index: 1;
+      background-color: $primary;
+      @include flex;
+      list-style: none;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      gap: clamp(2rem, 8vh, 3rem);
+
+      -webkit-box-sizing: content-box;
+      box-sizing: border-box;
+
+
+      li a {
+        font-size: 36px;
+        text-decoration: none;
+        color: $secondary;
+        font-weight: 700;
+
+        &:hover {
+          color: $accent3;
+        }
+      }
+    }
+  }
 }
 
 
@@ -79,6 +185,7 @@ nav {
     .btn-menu {
       display: none;
     }
+
 
     .header-title {
       //      font-size: 40px;
@@ -102,6 +209,11 @@ nav {
     margin: 0 auto;
     z-index: 1;
     border: none;
+
+    /* Hide button on large screens */
+    button.btn-menu-close {
+      display: none;
+    }
 
     ul {
       @include flex;
