@@ -447,6 +447,34 @@ footer .container li:nth-of-type(3) {
     grid-area: button1;
   }
 }
+.challenge-onsite {
+  position: relative;
+}
+.challenge-onsite::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0.5em;
+  right: 1em;
+  background-image: url(../images/icon-onsite.svg);
+}
+
+.challenge-online {
+  position: relative;
+}
+.challenge-online::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0.5em;
+  right: 1em;
+  background-image: url(../images/icon-online.svg);
+}
+
 .popular-challenges .challenges-header {
   font-weight: 400;
   font-size: clamp(32px, 3vw, 36px);
