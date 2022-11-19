@@ -1,4 +1,32 @@
-.popular-challenges {
+@mixin icon {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: .5em;
+  right: 1em;
+}
+
+.challenge-onsite {
+  position: relative;
+
+  &::before {
+    @include icon;
+    background-image: url(../images/icon-onsite.svg);
+  }
+}
+
+.challenge-online {
+  position: relative;
+
+  &::before {
+    @include icon;
+    background-image: url(../images/icon-online.svg);
+  }
+}
+
+.our-challenges {
 
   .challenges-header {
     font-weight: 400;
@@ -7,25 +35,16 @@
   }
 
   .challenges-collection {
-    padding: 2rem 3rem;
+    padding: 4rem 3rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: auto;
+    max-width: 100vw;
+    margin-inline: auto;
     gap: 2rem;
-    -webkit-box-flex: 1;
-    -ms-flex: 1 0;
-    flex: 1 0;
-    overflow: scroll;
-    -ms-flex-negative: 1 0 auto;
-    -ms-flex: 1 0 auto;
-    flex: 1 0 auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    place-content: center;
   }
 
   .challenge {
@@ -35,6 +54,24 @@
     -webkit-box-shadow: 0 0 10px $boxShadow;
     box-shadow: 0 0 10px $boxShadow;
     border-radius: 8px;
+
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+
+    .challenge-image-kitten {
+      -o-object-fit: cover;
+      object-fit: cover;
+    }
 
     img {
       width: 100%;
@@ -97,18 +134,14 @@
   }
 
   .btn-small {
-    float: right;
     margin: .7rem 1rem;
+    margin-left: auto;
   }
 }
 
 @media screen and (min-width: 1279px) {
-  .popular-challenges {
-    display: grid;
-    grid-template-areas:
-      "header header"
-      "middle middle"
-      "button1 button2";
+  .our-challenges {
+
 
     .challenges-header {
       grid-area: header;
@@ -119,19 +152,9 @@
     }
 
     .challenges-collection {
-      grid-area: middle;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      padding: 2rem 3rem;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      width: auto;
-      gap: 2rem;
-      -webkit-box-flex: 1;
-      -ms-flex: 1 0;
-      flex: 1 0;
+      max-width: 1280px;
+      margin: 0 auto;
+
     }
 
     .challenges-collection~.btn-secondary,

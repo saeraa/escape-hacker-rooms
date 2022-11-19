@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap"
     rel="stylesheet">
   <script src="script.js" defer></script>
+  <script src="filter.js" defer></script>
   <link rel="stylesheet" href="style.css">
   <title>[Esc] Escape Hacker Rooms</title>
 </head>
@@ -39,10 +40,137 @@
 
   </div>
 
-  <section class="popular-challenges">
-    <h2 class="challenges-header">Popular challenges right now</h2>
+  <section class="our-challenges">
+    <h2 class="challenges-header">Our challenges</h2>
+
+    <form class="filter-form">
+      <h3 class="filter-header">Filter challenges</h3>
+
+      <button type="button" class="filter-close" aria-label="Close filter modal"></button>
+
+      <div class="filter-type">
+        <h4 class="filter-header-small">By type</h4>
+        <label><input type="checkbox" name="type:online">
+          Include online challenges </label>
+        <label><input type="checkbox" name="type:onsite">
+          Include on-site challenges </label>
+      </div>
+
+      <div class="filter-rating">
+        <h4 class="filter-header-small">By rating</h4>
+        <div class="filter-rating-stars-container">
+
+          <div class="filter-rating-stars">
+            <input type="radio" name="rating:min" id="rating-min-5" value="5">
+            <label for="rating-min-5"> </label>
+            <input type="radio" name="rating:min" id="rating-min-4" value="4">
+            <label for="rating-min-4"> </label>
+            <input type="radio" name="rating:min" id="rating-min-3" value="3">
+            <label for="rating-min-3"> </label>
+            <input type="radio" name="rating:min" id="rating-min-2" value="2">
+            <label for="rating-min-2"> </label>
+            <input type="radio" name="rating:min" id="rating-min-1" value="1">
+            <label for="rating-min-1"> </label>
+          </div>
+
+          <small>to</small>
+
+          <div class="filter-rating-stars">
+            <input type="radio" name="rating:max" id="rating-max-5" value="5">
+            <label for="rating-max-5"> </label>
+            <input type="radio" name="rating:max" id="rating-max-4" value="4">
+            <label for="rating-max-4"> </label>
+            <input type="radio" name="rating:max" id="rating-max-3" value="3">
+            <label for="rating-max-3"> </label>
+            <input type="radio" name="rating:max" id="rating-max-2" value="2">
+            <label for="rating-max-2"> </label>
+            <input type="radio" name="rating:max" id="rating-max-1" value="1">
+            <label for="rating-max-1"> </label>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="filter-tags">
+        <h4 class="filter-header-small">By tags</h4>
+        <div id="tags"></div>
+      </div>
+
+      <div class="filter-search">
+        <h4 class="filter-header-small">Or type to search for keyword</h4>
+        <input type="search" name="search" placeholder="Start typing to filter">
+      </div>
+
+
+      <button type="button" class="filter-clear">Clear filters</button>
+
+
+    </form>
+
+    <button aria-label="Close Menu" class="btn-filter">Filter challenges</button>
 
     <div class="challenges-collection">
+      <article class="challenge challenge-onsite">
+        <picture>
+          <source media="(max-width: 479px)" srcset="images/image2-smallest.png">
+          <source media="(min-width: 480px)" srcset="images/image2-small.png">
+          <img src="images/image2-small.png" alt="Hacker in front of multiple computer monitors with code">
+        </picture>
+        <h3 class="challenge-header-small">Title of room (on-site)</h3>
+
+        <p class="info">
+          <span class="rating">
+            <span role="img" aria-label="filled star" class="star-filled"></span>
+            <span role="img" aria-label="filled star" class="star-filled"></span>
+            <span role="img" aria-label="filled star" class="star-filled"></span>
+            <span role="img" aria-label="filled star" class="star-filled"></span>
+            <span role="img" aria-label="empty star" class="star-empty"></span>
+          </span>2-6 participants
+        </p>
+        <p>Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam. Nemo nocere tibi erit, et non
+          inimicos, et</p>
+        <a href="#" class="btn-primary btn-small">Book this room</a>
+      </article>
+      <article class="challenge challenge-onsite">
+        <picture>
+          <source media="(max-width: 479px)" srcset="images/image2-smallest.png">
+          <source media="(min-width: 480px)" srcset="images/image2-small.png">
+          <img src="images/image2-small.png" alt="Hacker in front of multiple computer monitors with code">
+        </picture>
+        <h3 class="challenge-header-small">Title of room (on-site)</h3>
+        <p class="info">
+          <span class="rating">
+            <span role="img" aria-label="filled star" class="star-filled"></span>
+            <span role="img" aria-label="filled star" class="star-filled"></span>
+            <span role="img" aria-label="filled star" class="star-filled"></span>
+            <span role="img" aria-label="filled star" class="star-filled"></span>
+            <span role="img" aria-label="empty star" class="star-empty"></span>
+          </span>2-6 participants
+        </p>
+        <p>Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam. Nemo nocere tibi erit, et non
+          inimicos, et</p>
+        <a href="#" class="btn-primary btn-small">Book this room</a>
+      </article>
+      <article class="challenge challenge-online">
+        <picture>
+          <source media="(max-width: 479px)" srcset="images/image2-smallest.png">
+          <source media="(min-width: 480px)" srcset="images/image2-small.png">
+          <img src="images/image2-small.png" alt="Hacker in front of multiple computer monitors with code">
+        </picture>
+        <h3 class="challenge-header-small">Title of room (on-site)</h3>
+        <p class="info">
+          <span class="rating">
+            <span role="img" aria-label="filled star" class="star-filled"></span>
+            <span role="img" aria-label="filled star" class="star-filled"></span>
+            <span role="img" aria-label="filled star" class="star-filled"></span>
+            <span role="img" aria-label="filled star" class="star-filled"></span>
+            <span role="img" aria-label="empty star" class="star-empty"></span>
+          </span>2-6 participants
+        </p>
+        <p>Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam. Nemo nocere tibi erit, et non
+          inimicos, et</p>
+        <a href="#" class="btn-primary btn-small">Book this room</a>
+      </article>
       <article class="challenge challenge-onsite">
         <picture>
           <source media="(max-width: 479px)" srcset="images/image2-smallest.png">

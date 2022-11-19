@@ -27,6 +27,22 @@
   }
 }
 
+.btn-filter {
+  @include flex;
+  @extend %btn;
+  background-color: $accent3;
+  border: 2px solid $accent3;
+  color: $primary;
+  width: 180px;
+  height: 44px;
+  font-size: 16px;
+  display: block;
+
+  &.open {
+    display: none;
+  }
+}
+
 .btn-primary {
   @include flex;
   @extend %btn;
