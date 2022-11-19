@@ -239,6 +239,7 @@ nav {
     flex-direction: column;
     gap: clamp(2rem, 8vh, 3rem);
     box-sizing: border-box;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
   }
   nav ul li a {
     font-size: 36px;
