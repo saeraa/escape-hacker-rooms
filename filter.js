@@ -94,7 +94,7 @@ function displayData(array) {
           </span>${data.minParticipants}-${data.maxParticipants} participants
         </p>
         <p>${data.description}</p>
-        <a href="#" class="btn-primary btn-small">${
+        <a href="#" onclick="openDialog()" class="btn-primary btn-small">${
 					data.type == "online" ? "Take challenge online" : "Book this room"
 				}</a>
       </article>`;

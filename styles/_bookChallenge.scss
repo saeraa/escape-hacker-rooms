@@ -1,0 +1,55 @@
+dialog {
+  background-color: #fff;
+  position: fixed;
+  top: 2em;
+  border: none;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  margin-inline: auto;
+
+  max-width: 80vw;
+  width: 500px;
+  height: 600px;
+  max-height: 90vh;
+  padding: 2em;
+}
+
+.book-challenge {
+  width: 100%;
+  height: 100%;
+  gap: 1.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+
+  & h2,
+  p {
+    padding-block: 1em;
+  }
+
+  label {
+    display: block;
+  }
+
+  input {
+    padding: .5em;
+    margin-block: .5em;
+  }
+
+  & button {
+    @extend %btn;
+    // @extend .btn-small;
+    @extend .btn-primary;
+    margin: 0;
+    -ms-flex-item-align: right;
+    align-self: flex-end;
+  }
+}

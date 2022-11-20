@@ -12,6 +12,7 @@
     rel="stylesheet">
   <script src="script.js" defer></script>
   <script src="filter.js" defer></script>
+  <script src="booking.js" defer></script>
   <link rel="stylesheet" href="style.css">
   <title>[Esc] Escape Hacker Rooms</title>
 </head>
@@ -234,6 +235,19 @@
       </article>
     </div>
   </section>
+
+  <dialog id="dialog" open>
+    <form method="dialog" class="book-challenge">
+      <div>
+
+        <h2>Book room "Title of room" (step 1)</h2>
+        <p>What date would you like to come?</p>
+        <label for="book-date">Date</label>
+        <input type="date" id="book-date">
+      </div>
+      <button>Search available times</button>
+    </form>
+  </dialog>
 
 
   <footer id="footer">

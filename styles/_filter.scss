@@ -1,4 +1,43 @@
+@-webkit-keyframes filter-show {
+  from {
+    -webkit-transform: scale(0);
+    transform: scaleY(0);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  }
+
+  to {
+    -webkit-transform: scale(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  }
+}
+
+@keyframes filter-show {
+  from {
+    -webkit-transform: scale(0);
+    transform: scaleY(0);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  }
+
+  to {
+    -webkit-transform: scale(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  }
+}
+
 .filter-form {
+
+  &.open {
+    -webkit-animation: filter-show 0.3s ease-in backwards;
+    animation: filter-show 0.3s ease-in backwards;
+
+  }
+
   .filter-clear {
     @extend %btn;
     background-color: $accent3;
@@ -12,6 +51,7 @@
     justify-self: end;
     -ms-flex-item-align: end;
     align-self: end;
+
   }
 
   label {
@@ -20,7 +60,6 @@
 
   padding: 2em;
   max-width: 80vw;
-  // border: 1px solid black;
   -webkit-box-shadow: $boxShadow;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
   border-radius: 8px;
@@ -34,11 +73,17 @@
 
   &.open {
     display: grid;
+
+
   }
 
 
   @media (min-width: $bp-medium) {
     grid-template-columns: repeat(2, 1fr);
+
+    .filter-clear {
+      grid-column: 2;
+    }
   }
 
   @media (min-width: $bp-large) {
@@ -60,7 +105,7 @@
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-    top: 2em;
+    top: 3em;
     right: 2em;
 
     &::before {

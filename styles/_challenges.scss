@@ -27,11 +27,12 @@
 }
 
 .our-challenges {
-
   .challenges-header {
+    text-align: center;
+    margin: auto;
     font-weight: 400;
     font-size: clamp(32px, 3vw, 36px);
-    padding: 6.5rem 2rem .5rem 1.4rem;
+    padding: 2em 2em 1em 2em;
   }
 
   .challenges-collection {
@@ -50,15 +51,12 @@
   .challenge {
     -ms-flex-negative: 0;
     flex-shrink: 0;
-    width: 363px;
+    max-width: 353px;
     -webkit-box-shadow: 0 0 10px $boxShadow;
     box-shadow: 0 0 10px $boxShadow;
     border-radius: 8px;
-
     display: -webkit-box;
-
     display: -ms-flexbox;
-
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -104,7 +102,6 @@
     padding-inline: 1rem;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
-
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
@@ -142,29 +139,9 @@
 @media screen and (min-width: 1279px) {
   .our-challenges {
 
-
-    .challenges-header {
-      grid-area: header;
-      margin: auto;
-      font-size: 36px;
-      text-align: center;
-      padding: 2em 2em 1em 2em;
-    }
-
     .challenges-collection {
       max-width: 1280px;
       margin: 0 auto;
-
-    }
-
-    .challenges-collection~.btn-secondary,
-    .challenges-collection~.btn-primary {
-      margin: 3rem .5rem 4rem;
-    }
-
-    .btn-primary {
-      grid-area: button1;
-      justify-self: end;
     }
 
     .info {
