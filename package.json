@@ -1,0 +1,22 @@
+{
+  "name": "escape-hacker-rooms",
+  "version": "1.0.0",
+  "description": "Uppgiften\r Denna uppgift är den första delinlämningen i projektet, och utgör exmainering av kursen “Webbutveckling – HTML & CSS”.",
+  "main": "booking.js",
+  "scripts": {
+    "test": "npx cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saeraa/escape-hacker-rooms.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saeraa/escape-hacker-rooms/issues"
+  },
+  "homepage": "https://github.com/saeraa/escape-hacker-rooms#readme",
+  "dependencies": {
+    "cypress": "^12.7.0"
+  }
+}
